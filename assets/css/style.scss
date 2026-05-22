@@ -1,0 +1,469 @@
+/* ==========================================================
+   Import des variables 
+   ========================================================== */
+@use "./variables" as *;
+@use "./NosOffres";
+@use "./Projets";
+@use "./Contact";
+@use "./footer";
+
+/* ==========================================================
+   Styles globaux
+   ========================================================== */
+
+* {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(ellipse 40% 50% at 95% 5%, #843500 0%, transparent 55%),
+    radial-gradient(ellipse 30% 40% at 5% 90%, #9c3f01 0%, transparent 55%),
+    radial-gradient(ellipse 50% 60% at 50% 50%, #8e3901 0%, transparent 70%),
+    linear-gradient(150deg, #662900 0%, #351500 40%, #4e1f00 70%, #BE4D00 100%);
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #fff;
+}
+
+p {
+  color: #fff;
+}
+
+.hero-layout-2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn-hero-primary,
+.btn-hero-outline {
+  display: inline-block;
+  min-width: 200px;
+  text-align: center;
+  border-radius: 50px;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  text-decoration: none;
+  cursor: pointer;
+
+  @media (max-width: 576px) {
+    width: auto;
+  }
+}
+
+.btn-hero-primary {
+  background-color: #ffe1cc73;
+  border: 2px solid #ffe1cc5e;
+  color: #fff;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    background-color: transparent;
+    border-color: #ffe1cc5e;
+    color: #fff;
+  }
+}
+
+.btn-hero-outline {
+  background-color: transparent;
+  border: 2px solid #ffe1cc5e;
+  color: #fff;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #ffe1cc73;
+    color: #fff;
+  }
+}
+
+.navbar {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* ==========================================================
+   Conteneur principal
+   ========================================================== */
+.contebody {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  position: relative; 
+}
+
+/* ==========================================================
+   Bouton retour en haut
+   ========================================================== */
+.returnUp {
+  @extend %top; 
+  border-radius: 50%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid $color-secondary-solid;
+  background-color: $color-accent;
+  color: $color-white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-4px); 
+      background-color: #722e00c7;
+      border: 2px solid $color-secondary-solid;
+      color: $color-white;
+    }
+  }
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+/* ==========================================================
+   Hero 
+   ========================================================== */
+
+.Hero {
+  position: relative;
+  min-height: 55vh;
+}
+
+.Hero .hero-inner {
+  position: relative;
+  width: 90%;
+  margin: auto;
+  min-height: 55vh;
+  overflow: hidden;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+/* ===============================
+   COUCHE 1 : 
+   =============================== */
+
+.Hero .hero-inner {
+  background:
+    radial-gradient(ellipse 35% 45% at 80% 20%, #bc4b00 0%, transparent 55%),
+    radial-gradient(ellipse 25% 30% at 15% 75%, #773000 0%, transparent 50%),
+    radial-gradient(ellipse 50% 40% at 50% 50%, #bd4c00 0%, transparent 65%),
+    linear-gradient(150deg, #5a24008e 0%, #4a1e007f 40%, #471d010a 70%, #471d000e 100%);
+}
+
+.Hero .hero-inner::before,
+.Hero .hero-inner::after {
+  display: none;
+}
+
+/* ===============================
+   COUCHE 2 : 
+   =============================== */
+.Hero .hero-inner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-color: #ffe1cccd;
+  z-index: 2;
+}
+
+/* ===============================
+   CONTENU HERO
+   =============================== */
+.Hero .hero-content {
+  position: relative;
+  z-index: 3;
+  min-height: calc(55vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* ===============================
+   LAYOUTS
+   =============================== */
+.Hero .hero-layout {
+  margin-bottom: 2rem;
+}
+
+.Hero .hero-layout-1 h1 {
+  font-weight: 700;
+  font-size: 2.8rem;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 1rem;
+  color: #fff;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.Hero .hero-layout-1 p {
+  font-size: 1.25rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .Hero .hero-layout-2 {
+    flex-direction: column;
+  }
+
+  .Hero .hero-layout-2 .btn {
+    width: 100%;
+    margin-right: 0 !important;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================
+   Navbar 
+   ========================================================== */
+   .navbar {
+  background: radial-gradient(ellipse 60% 100% at 50% 0%, #803301 0%, transparent 75%), linear-gradient(180deg, #BE4D00 0%, #3f1a00 100%);
+  backdrop-filter: blur(8px);
+}
+
+
+.Hero + .navbar,
+.navbar {
+  position: relative;
+  z-index: 4;
+  
+
+  /* ===============================
+     Conteneur principal 
+     =============================== */
+  .navbar-inner {
+    width: 95%; 
+    margin: auto; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 991px) {
+    &:has(.navbar-collapse.show) .navbar-brand {
+      display: none !important;
+    }
+  }
+  .navbar-collapse {
+    justify-content: flex-end;
+  }
+
+  .nav-link {
+    color: #ffffff;
+    transition: color 0.3s ease;
+    font-weight: 600;
+  }
+
+  .nav-link.active,
+  .nav-link:hover {
+    color: $color-secondary;
+  }
+}
+
+/* ==========================================================
+   Accueil
+   ========================================================== */
+#Accueil {
+  color: #fff;
+
+  .btn-outline-light {
+    border-color: $frame81-border-color; // #006F3A
+    color: #fff;
+
+    &:hover {
+      background-color: $frame81-border-color;
+      border-color: $frame81-border-color;
+      color: #fff;
+    }
+  }
+}
+
+/* ================= Frame 68 ================= */
+.frame-68 {
+  position: relative;
+  width: 95%;
+  margin: auto;
+  padding: 2rem;
+  
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: $frame68-opacity; 
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+/* ================= Frame 81 ================= */
+.frame-81 {
+  width: 75%;
+  margin: auto;
+
+  @media (max-width: 992px) {
+    width: 90%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (max-width: 576px) {
+    width: 95%;
+  }
+}
+
+/* ================= Cards – commun ================= */
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  
+}
+
+/* ================= Frame 68 cards ================= */
+.card-frame68 {
+  background-color: $color-black;
+}
+
+/* ================= Frame 81 cards ================= */
+.card-frame81 {
+  background: transparent;
+  border: $frame81-border-size solid $frame81-border-color;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--bg);
+    background-size: cover; 
+    background-position: center;
+    opacity: $frame81-bg-opacity; 
+    mix-blend-mode: $frame81-blend-mode;
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  
+}
+
+/* ================= Card contenu ================= */
+.card-icon {
+  width: 32px;
+  height: 32px;
+  margin: 1rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+
+  .card-title {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-text {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+}
+
+/* ================= Bouton ================= */
+#Accueil .btn {
+  padding: 0.75rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+
+  &:hover {
+    background-color: $color-accent;
+    border-color: $color-accent;
+    color: #fff;
+  }
+}
+
+/* ==========================================================
+   HERO – (Accueil uniquement)
+   ========================================================== */
+
+.page-accueil {
+  .Hero {
+    h1,
+    p {
+      color: #fff !important;
+    }
+  }
+}
+
+/* ==========================================================
+   H5 – Accueil uniquement (cards, sections, etc.)
+   ========================================================== */
+
+.page-accueil {
+  h5,
+  .card-title {
+    color: #fff !important;
+  }
+}

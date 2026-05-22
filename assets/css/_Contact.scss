@@ -1,0 +1,298 @@
+@use "./variables" as v;
+
+/* ==========================================================
+   SECTION CONTACT – CONTENEUR GLOBAL
+   ========================================================== */
+#Contact {
+  background-color: transparent;
+}
+
+#Contact .container-fluid {
+  background-color: transparent;
+}
+
+/* ==========================================================
+   H1 – TITRE PRINCIPAL DE LA SECTION
+   ========================================================== */
+.contactH-wrapper {
+  background-color: v.$contact-h1-bg;
+  padding: 2rem 0;
+}
+
+.contactH {
+  color: v.$contact-h1-text;
+  text-align: center;
+  margin: 0;
+  font-size: 2.5rem;
+  padding-left: 1rem;
+}
+
+/* ==========================================================
+   H2 – TITRE DU FORMULAIRE
+   ========================================================== */
+.contacten {
+  color: #ffffff;
+  text-align: left;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+/* ==========================================================
+   FORMULAIRE – BLOC GAUCHE
+   ========================================================== */
+.contact-form form {
+  background-color: v.$contact-form-bg;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid #e0e0e0;
+}
+
+/* ==========================================================
+   INPUTS & TEXTAREA
+   ========================================================== */
+.contact-form .form-control {
+  background-color: v.$contact-input-bg;
+  color: v.$contact-input-text;
+  min-height: 48px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  padding: 0.75rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.contact-form .form-control:focus {
+  background-color: #f7f3f0cd;
+  box-shadow: 0 0 0 0.15rem #ece1d9a1;
+}
+
+/* ==========================================================
+   BOUTON D’ENVOI 
+   ========================================================== */
+.contact-btn {
+  position: relative;
+  display: inline-flex;
+  margin: 2rem auto 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: v.$contact-btn-bg;
+  color: v.$contact-btn-text;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    transform 0.2s ease;
+}
+
+/* ==========================================================
+   FLÈCHE – AVANT LE TEXTE
+   ========================================================== */
+.contact-btn::before {
+  content: ">";
+  color: v.$contact-btn-icon;
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: none;
+  transition: transform 0.2s ease;
+}
+
+
+.contact-btn .btn-icon {
+  display: none;
+}
+
+/* ==========================================================
+   HOVER
+   ========================================================== */
+.contact-btn:hover {
+  background-color: #843500;
+  transform: translateY(-2px);
+  color: v.$contact-btn-icon;
+}
+
+.contact-btn:hover::before {
+  transform: translateX(4px);
+}
+
+/* ==========================================================
+   COLONNE INFORMATIONS – DROITE
+   ========================================================== */
+.contact-detail {
+  background-color: v.$color-contactH1;
+  padding: 2rem;
+  border-radius: 16px;
+  color: #ffffff;
+}
+
+.contact-block {
+  margin-bottom: 1.5rem;
+}
+
+.contact-block h4 {
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.contact-block p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ==========================================================
+   RÉSEAUX SOCIAUX
+   ========================================================== */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-links a {
+  color: #ffffff;
+  font-size: 1.2rem;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.15);
+  opacity: 0.8;
+}
+
+/* ==========================================================
+   IMAGE
+   ========================================================== */
+.contact-image-full {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  background: url("../img/image.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-image-full::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 100% at 30% 50%, #8a3700c7 0%, transparent 60%),
+    radial-gradient(ellipse 40% 80% at 80% 30%, #a542009a 0%, transparent 60%),
+    linear-gradient(160deg, #351500ee 0%, #be4c007e 100%);
+}
+
+
+
+/* ==========================================================
+   NEWSLETTER
+   ========================================================== */
+.newsletter-wrapper {
+  background-color: v.$newsletter-bg;
+}
+
+.newsletter-wrapper .contebody {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* ==========================================================
+   TITRE
+   ========================================================== */
+.newsletter-title {
+  color: v.$newsletter-title-color;
+  text-transform: uppercase;
+  font-size: 30px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* ==========================================================
+   FORMULAIRE – FLEXBOX
+   ========================================================== */
+.newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+
+  /* Responsive : colonnes empilées sur mobile */
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+/* ==========================================================
+   INPUT EMAIL
+   ========================================================== */
+.newsletter-form .form-control {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* ==========================================================
+   BOUTON – AVEC FLÈCHE
+   ========================================================== */
+.newsletter-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: v.$newsletter-btn-bg;
+  color: v.$newsletter-btn-text;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    transform 0.2s ease;
+}
+
+
+.newsletter-btn::before {
+  content: ">";
+  color: v.$contact-btn-text;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  transition: transform 0.2s ease;
+  border: 2px solid transparent;
+}
+
+
+.newsletter-btn:hover {
+  background-color: transparent;
+  border: 2px solid v.$color-secondary-solid;
+  transform: translateY(-2px);
+}
+
+.newsletter-btn:hover::before {
+  transform: translateX(4px);
+}
+
+
+@media (max-width: 768px) {
+  .newsletter-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,116 @@
+@use "sass:color";
+
+/* ==========================================================
+   Couleurs globales
+   ========================================================== */
+$color-white: #ffffff;
+$color-black: #ffe1cc66;
+$color-grey: #ffffff66;
+$color-secondary: #fbd6bc;
+$color-secondary-solid: #ffe1cccd;
+$color-accent: #ffe1cc73;
+$color-contactH1: #17090023;
+$color-contactBTN: #451b06;
+
+
+
+/* ==========================================================
+   Navbar
+   ========================================================== */
+$navbar-bg-opacity: 0.4;
+$navbar-height: 80px;
+
+/* ==========================================================
+   Hero
+   ========================================================== */
+$hero-title-color: $color-white;
+$hero-subtitle-color: $color-white;
+$hero-bg-filter: rgba(48, 48, 48, 0.6);
+$hero-min-height: 55vh;
+$hero-padding: 4rem 1rem;
+$hero-h1-font: 2.8rem;
+$hero-h1-font-mobile: 2rem;
+$hero-p-font: 1.25rem;
+$hero-p-font-mobile: 1rem;
+
+/* ==========================================================
+   Frame 68 / 81 / offres / projets
+   ========================================================== */
+$frame68-opacity: 1;
+
+$frame81-border-color: $color-secondary-solid;
+$frame81-border-size: 2px;
+$frame81-bg-opacity: 0.09;
+$frame81-blend-mode: overlay;
+
+/* ==========================================================
+   OFFRES – Variables dédiées
+   ========================================================== */
+$frameoffres-border-color: $color-secondary-solid;
+$frameoffres-border-size: 2px;
+$frameoffres-bg-opacity: 0.09;
+$frameoffres-blend-mode: overlay;
+
+/* ==========================================================
+   PROJETS – Variables dédiées
+   ========================================================== */
+$frameprojets-border-color: $color-secondary-solid;
+$frameprojets-border-size: 2px;
+$frameprojets-bg-opacity: 0.09;
+$frameprojets-blend-mode: overlay;
+
+$frameprojets-simple-bg: $color-black;
+
+/* Partenaires */
+$partenaires-logo-max-height: 140px;
+$partenaires-logo-opacity: 0.85;
+$partenaires-logo-hover-scale: 1.05;
+
+/* ==========================================================
+   NEWSLETTER
+   ========================================================== */
+$newsletter-bg: $color-contactH1;
+$newsletter-title-color: $color-white;
+$newsletter-input-text: $color-black;
+$newsletter-input-bg: $color-white;
+$newsletter-btn-bg: $color-contactBTN;
+$newsletter-btn-text: $color-white;
+
+/* ==========================================================
+   FORMULAIRE CONTACT
+   ========================================================== */
+$contact-form-bg: #ffffff;
+$contact-input-bg: #ececec;
+$contact-input-text: #000000;
+$contact-btn-bg: $color-contactBTN;
+$contact-btn-text: $color-white;
+$contact-btn-icon: $color-white;
+$contact-h1-bg: $color-contactH1;
+$contact-h1-text: $color-white;
+
+/* ==========================================================
+   Footer
+   ========================================================== */
+$footer-bg: $color-black;
+$footer-text: $color-white;
+$footer-accent: $color-secondary;
+$footer-accent-dark: color.adjust($footer-accent, $lightness: -5%);
+$footer-padding-top: 5rem;
+$footer-bottom-padding: 0.75rem;
+$footer-gap-row: 2rem;
+$footer-font-small: 0.85rem;
+$footer-link-hover-opacity: 0.8;
+
+/* ==========================================================
+   Placeholder boutons fixes
+   ========================================================== */
+%top {
+  position: fixed;
+  bottom: clamp(16px, 5vw, 65px);
+  right: max(16px, calc((100vw - 1200px) / 3 + 5px));
+  width: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}

@@ -1,0 +1,146 @@
+@use "./variables" as v;
+
+#Projets {
+  color: v.$color-white;
+
+  /* ======================================================
+     Titres de sections 
+     ====================================================== */
+  .projets-title {
+    color: v.$color-white;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 600;
+  }
+
+  /* ======================================================
+     CONTENEUR PRINCIPAL
+     ====================================================== */
+  .projets-container {
+    width: 95%;
+    max-width: 1200px;
+    margin: auto;
+
+    @media (max-width: 991px) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  /* ======================================================
+     FRAME PROJETS 
+     ====================================================== */
+  .projets-frame-image {
+    width: 75%;
+    margin: auto;
+
+    @media (max-width: 992px) {
+      width: 90%;
+    }
+
+    @media (max-width: 576px) {
+      width: 95%;
+    }
+  }
+
+  .card-projets-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    border: v.$frameprojets-border-size solid v.$frameprojets-border-color;
+    background: transparent;
+    min-height: 300px;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: var(--bg);
+      background-size: cover;
+      background-position: center;
+      opacity: v.$frameprojets-bg-opacity;
+      mix-blend-mode: v.$frameprojets-blend-mode;
+      z-index: 0;
+    }
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  /* ======================================================
+     FRAME PROJETS
+     ====================================================== */
+  .projets-frame-simple {
+    position: relative;
+    padding: 2rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 1;
+      z-index: 0;
+    }
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .card-projets-simple {
+    background-color: v.$frameprojets-simple-bg;
+    border-radius: 1rem;
+    min-height: 150px;
+  }
+
+  /* ======================================================
+     CONTENU DES CARDS
+     ====================================================== */
+  .card-body {
+    padding: 1.5rem;
+
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: v.$color-white;
+    }
+
+    .card-text {
+      font-size: 1.05rem;
+      line-height: 1.5;
+      color: v.$color-white;
+    }
+  }
+
+  /* ======================================================
+     PARTENAIRES
+     ====================================================== */
+  .partenaires {
+    text-align: center;
+
+    img {
+      max-height: v.$partenaires-logo-max-height;
+      width: auto;
+      opacity: v.$partenaires-logo-opacity;
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+      &:hover {
+        opacity: 1;
+        transform: scale(v.$partenaires-logo-hover-scale);
+      }
+    }
+  }
+}

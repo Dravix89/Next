@@ -1,0 +1,70 @@
+@use "./variables" as v;
+
+/* ==========================================================
+   Section Footer
+   ========================================================= */
+
+.footer {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.footer {
+   background:
+    radial-gradient(ellipse 35% 45% at 80% 20%, #a44200 0%, transparent 55%),
+    radial-gradient(ellipse 25% 30% at 15% 75%, #722e00 0%, transparent 50%),
+    radial-gradient(ellipse 50% 40% at 50% 50%, #BE4D00 0%, transparent 65%),
+    linear-gradient(150deg, #692e0115 0%, #64280017 40%, #491e01 70%, #5a2400 100%);
+  color: v.$footer-text;
+  padding-top: v.$footer-padding-top;
+
+  .text-white-50 {
+    color: v.$color-white !important;
+  }
+
+  .navbar-brand img {
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  h5 {
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+  }
+
+  h6 {
+    letter-spacing: 0.05em;
+  }
+
+  ul li a {
+    transition:
+      color 0.2s ease,
+      text-decoration-color 0.2s ease;
+
+    &:hover {
+      color: v.$footer-accent !important;
+      text-decoration-color: v.$footer-accent !important;
+    }
+  }
+
+  .footer-bottom {
+     background:
+    linear-gradient(150deg, #ac45002f 0%, #1b0b0093 40%, #8b38000b 70%, #1508001d 100%);
+    padding: v.$footer-bottom-padding 0;
+
+    small,
+    a {
+      font-size: v.$footer-font-small;
+    }
+
+    a {
+      transition: opacity 0.2s ease;
+      &:hover {
+        opacity: v.$footer-link-hover-opacity;
+      }
+    }
+  }
+}
