@@ -14,26 +14,32 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
        <button id="navClose" style="background:none;border:none;color:#fff;font-size:2rem;position:absolute;top:1rem;right:1rem;cursor:pointer;display:none;" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">&times;</button>
-      <ul class="navbar-nav align-items-lg-center">
-        <li class="nav-item">
-          <a class="nav-link <?php echo ($page === 'Accueil') ? 'active' : ''; ?>" href="index.php?page=Accueil">Accueil</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link <?php echo ($page === 'Offres') ? 'active' : ''; ?>" href="index.php?page=Offres">Offres</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link <?php echo ($page === 'Projets') ? 'active' : ''; ?>" href="index.php?page=Projets">Projets</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link <?php echo ($page === 'Contact') ? 'active' : ''; ?>" href="index.php?page=Contact">Contact</a>
-        </li>
-      </ul>
+     <ul class="navbar-nav align-items-lg-center">
+      <li class="nav-item">
+        <a class="nav-link <?php echo ($page === 'Accueil') ? 'active' : ''; ?>" href="index.php?page=Accueil">Accueil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <?php echo ($page === 'Methode') ? 'active' : ''; ?>" href="index.php?page=Methode">Méthode B2N©</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <?php echo ($page === 'Offres') ? 'active' : ''; ?>" href="index.php?page=Offres">Offres</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <?php echo ($page === 'Projets') ? 'active' : ''; ?>" href="index.php?page=Projets">Réalisations</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <?php echo ($page === 'Apropos') ? 'active' : ''; ?>" href="index.php?page=Apropos">À Propos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <?php echo ($page === 'Contact') ? 'active' : ''; ?>" href="index.php?page=Contact">Contact</a>
+      </li>
+    </ul>
     </div>
   </div>
 </nav>
 
 <?php
-$pagesAvecHero = ['Accueil', 'Offres', 'Projets'];
+$pagesAvecHero = ['Accueil', 'Methode', 'Offres', 'Projets',  'Apropos'];
 ?>
 
 <?php if (in_array($page, $pagesAvecHero)): ?>

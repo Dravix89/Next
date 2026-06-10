@@ -1,0 +1,16 @@
+@use "./variables" as v;
+
+.step-circle {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  color: v.$color-contactBTN; 
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 1rem;
+}
+

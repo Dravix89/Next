@@ -74,9 +74,9 @@
                 <small class="mb-0">© 2026 Next – The Next Level</small>
                 <div class="d-flex gap-3">
                     <a class="link-light link-underline-opacity-0 link-underline-opacity-100-hover small"
-                        href="#">Conditions D’utilisations</a>
+                        href="index.php?page=Terms">Conditions d'utilisation</a>
                     <a class="link-light link-underline-opacity-0 link-underline-opacity-100-hover small"
-                        href="#">Politique De Confidentialités</a>
+                        href="index.php?page=Privacy">Politique de confidentialités</a>
                 </div>
             </div>
         </div>

@@ -6,6 +6,8 @@
 @use "./Projets";
 @use "./Contact";
 @use "./footer";
+@use "./methode";
+@use "./legal";
 
 /* ==========================================================
    Styles globaux
@@ -282,6 +284,11 @@ p {
     justify-content: space-between;
   }
 
+  .navbar-nav {
+  display: flex;
+  gap: 2rem;
+  }
+
   .navbar-brand {
     display: flex;
     align-items: center;
@@ -300,6 +307,7 @@ p {
     color: #ffffff;
     transition: color 0.3s ease;
     font-weight: 600;
+    
   }
 
   .nav-link.active,

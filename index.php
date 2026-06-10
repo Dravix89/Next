@@ -7,7 +7,7 @@ require_once 'inc/init.php';
 $page = $_GET['page'] ?? 'Accueil';
 
 
-$pagesAutorisees = ['Accueil', 'Offres', 'Projets', 'Contact'];
+$pagesAutorisees = ['Accueil', 'Methode', 'Offres', 'Projets', 'Apropos', 'Contact', 'Terms', 'Privacy'];
 
 if (!in_array($page, $pagesAutorisees)) {
     $page = 'Accueil';

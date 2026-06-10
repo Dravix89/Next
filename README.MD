@@ -9,8 +9,10 @@ Site vitrine développé en PHP avec architecture en includes, utilisation de Bo
 Projet front-end/back-end léger permettant de présenter :
 
 - Accueil
+- Methode
 - Offres
 - Projets
+- A Propos 
 - Contact
 - Newsletter
 
@@ -56,11 +58,13 @@ Le projet est structuré de manière modulaire avec des fichiers `include` réut
 │   └── footer.inc.php
 │
 ├── Accueil.php
-├── Contact.php
+├── Methode.php
 ├── Offres.php
 ├── Projets.php
-├── index.php
+├── Apropos.php
+├── Contact.php
 ├── contact_traitement.php
+├── index.php
 └── newsletter_traitement.php
 
 ``` 
