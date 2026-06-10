@@ -35,10 +35,10 @@
 </div>
 
 <!-- ================= Méthode modulaire ================= -->
-<div class="contebody my-5">
+<div class="contebody my-3">
   <h2 class="text-center mb-5">Une Méthode Modulaire</h2>
   <p class="text-center mb-5">
-    <strong style="color:#fbd6bc;">Next</strong> propose un parcours ciblé. <br> Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor.
+    <strong style="color:#ce773c;">Next</strong> propose un parcours ciblé. <br> Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor.
   </p>
   <div class="row g-4">
     <div class="col-12 col-md-6">

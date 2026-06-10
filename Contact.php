@@ -7,8 +7,8 @@
       <div class="row g-4">
         <div class="col-12 text-center">
           <h2 class="contacten">
-            Pour en savoir plus, <br>
-            rejoignez-nous 
+            Pour en savoir plus,<br>
+            rejoignez <strong class="c-next">Next</strong>
           </h2>
         </div>
         <div class="col-12 col-md-7 contact-form">
